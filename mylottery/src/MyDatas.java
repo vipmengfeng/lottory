@@ -69,13 +69,33 @@ public class MyDatas {
         {
 			cutArray.add(dataArray.get(i).substring((s_count-1), e_count));
         }
-		int xt_count=CutRes(cutArray);
+		int xt_count=Contrast_array(cutArray);
         System.out.println("截取走势表数据完毕，截取的位数为："+s_count+"至"+e_count+"位，已将结果存入cutArray中。");
         System.out.println("cutArray为："+cutArray);
         if(xt_count!=0){
         	System.out.println("注意有相同结果，相同总次数为："+xt_count+"次.");
         }
 		return cutArray;
+	}
+	
+	public void print(String str)
+	{
+		System.out.println(str);
+	}
+	public void print(int num)
+	{
+		System.out.println(num);
+	}
+	/**
+	 * 抽取str第num列数据返回
+	 * @param str 传入要进行处理的字符串
+	 * @param num 传入要截取的第几列数字
+	 * @return
+	 */
+	public String cutNumber(String str,int num)
+	{
+		String Resturnstr=str.substring(num-1,num);
+		return Resturnstr;
 	}
 	/**
 	 * 纵向截取分析数据
@@ -111,31 +131,54 @@ public class MyDatas {
 		
 	}
 	/**
-	 * 自定义列横向组合向下比较
+	 * 自定义列横向组合
 	 * @param args 传入由自定义列数组合而成的Integer数组
 	 */
-	public void CustomResult(Integer[] args)
+	public ArrayList<String> CustomResult(Integer[] args,ArrayList<String> AL)
 	{
 		String customstr="";
 		ArrayList<String> customArray = new ArrayList<String> ();
+		customArray.clear();
 		
-		for(int j=0;j<dataArray.size();j++)
+		for(int j=0;j<AL.size();j++)
 		{
 			customstr="";
 			for(int i=0;i<args.length;i++)
 			{
-				customstr+=dataArray.get(j).substring((args[i]-1), args[i]);
+				customstr+=AL.get(j).substring((args[i]-1), args[i]);
 			}
-			customCut.add(customstr);
+			
+			customArray.add(customstr);
 		}
-		CutRes(customCut);
+		
+		return customArray;
+		
+		
+	}
+	
+	public String CustomResult(Integer[] args,String AL)
+	{
+		String customstr="";
+		for(int j=0;j<AL.length();j++)
+		{
+			customstr="";
+			for(int i=0;i<args.length;i++)
+			{
+				customstr+=AL.substring((args[i]-1), args[i]);
+			}
+		
+		}
+		
+		return customstr;
+		
+		
 	}
 	/**
-	 * 截取数据函数
+	 * 对比数据函数
 	 * @param AL 传入要截取的结果集
 	 * @return
 	 */
-	private int CutRes(ArrayList<String> AL)
+	public int Contrast_array(ArrayList<String> AL)
 	{
         int xt_count=0;
         for(int i=0;i<AL.size()-1;i++)

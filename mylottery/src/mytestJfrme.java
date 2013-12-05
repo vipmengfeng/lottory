@@ -41,7 +41,7 @@ public class mytestJfrme extends JFrame {
 					frame.setTitle("ÎÒµÄ×ã²Ê·ÖÎö");
 					//Display the window.
 					frame.pack();
-					frame.setSize(450, 350);
+					frame.setSize(750, 350);
 					//frame.setUndecorated(true);
 					frame.setLocationRelativeTo(null);
 					//com.sun.awt.AWTUtilities.setWindowOpacity(frame, 0.02f);
@@ -159,7 +159,8 @@ public class mytestJfrme extends JFrame {
 		if(i==JFileChooser.APPROVE_OPTION){
             File file=jfc.getSelectedFile();
             String URL=file.getPath();
-            this.url=URL;
+            //this.url=URL;
+            this.url="/Users/companyfiles/APP/java/myfootballlottery/mylottery/src/result.txt";
             textField.setText(URL);
             }
 	}
