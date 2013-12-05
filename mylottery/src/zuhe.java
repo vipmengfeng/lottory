@@ -4,7 +4,7 @@ public class zuhe {
 	/**
 	 * @param args
 	 */
-	/** 排列组合
+	/** 排列组合算法
 	* @param a:组合数组 
 	* @param k:生成组合个数 
 	* @return :所有可能的组合数组列表 
