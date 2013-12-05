@@ -45,13 +45,13 @@ public class Copy_2_of_StatisAnyThree {
      * @param m
      * @return
      */
-    public List combine(int[] a,int m){
+    public List<int[]> combine(int[] a,int m){
         int n = a.length;
         if(m>n){
             System.out.println("错误！数组a中只有"+n+"个元素。"+m+"大于"+2+"!!!");
         }
         
-        List result = new ArrayList();
+        List<int[]> result = new ArrayList<int[]>();
         
         int[] bs = new int[n];
         for(int i=0;i<n;i++){
@@ -126,7 +126,7 @@ public class Copy_2_of_StatisAnyThree {
         return result ;
     }
     
-    private void print(List l){
+    private void print(List<int[]> l){
         for(int i=0;i<l.size();i++){
             int[] a = (int[])l.get(i);
             for(int j=0;j<a.length;j++){
