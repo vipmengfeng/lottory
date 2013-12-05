@@ -10,7 +10,6 @@ public class zuhe {
 	* @return :所有可能的组合数组列表 
 	*/ 
 	public ArrayList<int[]> zuhestart(int[] a, int m) { 
-	   //zuhe zuhe = new zuhe(); 
 	   ArrayList<int[]> list = new ArrayList<int[]>(); 
 	   int n = a.length; 
 
